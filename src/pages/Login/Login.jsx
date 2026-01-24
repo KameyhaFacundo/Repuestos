@@ -60,7 +60,7 @@ function Login() {
               <path d="M9 12l2 2 4-4"></path>
             </svg>
           </div>
-          <h1>Estudio Jurídico</h1>
+          <h1>Titulo proyecto</h1>
           <p>Sistema de gestión integral para la administración de casos y clientes del estudio.</p>
         </div>
 
