@@ -9,7 +9,7 @@ function Home() {
       <h1>Bienvenido al Sistema</h1>
       {user && (
         <div>
-          <p>Usuario: {user.name || user.email}</p>
+          <p>Usuario: {user.des_usu || user.email}</p>
           <button className="btn btn-danger" onClick={logout}>
             Cerrar Sesión
           </button>

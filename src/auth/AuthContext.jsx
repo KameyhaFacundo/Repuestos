@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { Alerta } from "../functions/alerts";
+import { logoutApi } from "./authServiceApi";
 
 export const AuthContext = createContext();
 
@@ -13,34 +13,22 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     const storedUser = localStorage.getItem("user");
+    const storedPermisos = localStorage.getItem("permisos");
 
     if (storedToken && storedUser) {
       setToken(storedToken);
       setUser(JSON.parse(storedUser));
 
-      // Aquí podrías hacer un fetch de permisos si tu API lo soporta
-      // fetchPermisosMyUser()
-      //   .then((response) => {
-      //     const permisosGet = response.map((p) => p.permiso?.codigo?.toLowerCase());
-      //     setMyPermisos(permisosGet);
-      //   })
-      //   .catch((error) => {
-      //     if (error.response?.status === 401) {
-      //       logout();
-      //     }
-      //   })
-      //   .finally(() => setLoading(false));
-
-      setLoading(false);
-    } else {
-      setLoading(false);
+      if (storedPermisos) {
+        setMyPermisos(JSON.parse(storedPermisos));
+      }
     }
+
+    setLoading(false);
   }, []);
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("expires_at");
-    localStorage.removeItem("user");
+  const logout = async () => {
+    await logoutApi();
     setToken(null);
     setUser(null);
     setMyPermisos([]);
