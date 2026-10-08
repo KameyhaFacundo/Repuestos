@@ -23,6 +23,9 @@ export const brand = {
   muted: "var(--c-muted)",
   line: "var(--c-line)",
   goldText: "var(--c-gold-text)",
+  heroA: "var(--c-hero-a)",
+  heroB: "var(--c-hero-b)",
+  bar: "var(--c-bar)",
   ivory: "var(--c-surface)",
 };
 
@@ -35,15 +38,21 @@ const tokens = {
     "--c-muted": "#5E5663",
     "--c-line": "rgba(78,34,73,0.18)",
     "--c-gold-text": "#A56E36",
+    "--c-hero-a": "#FFFFFF",
+    "--c-hero-b": "#F3ECE2",
+    "--c-bar": "rgba(78,34,73,0.05)",
   },
   dark: {
-    "--c-surface": "#170B16",
-    "--c-surface-alt": "#1F1020",
+    "--c-surface": "#2E1330",
+    "--c-surface-alt": "#3A1A3C",
     "--c-heading": "#F4E6C8",
-    "--c-ink": "#EFE6EE",
-    "--c-muted": "#B8ABBA",
-    "--c-line": "rgba(217,168,78,0.25)",
+    "--c-ink": "#F1E8F1",
+    "--c-muted": "#C9BBCB",
+    "--c-line": "rgba(217,168,78,0.28)",
     "--c-gold-text": "#E3B75F",
+    "--c-hero-a": "#4E2249",
+    "--c-hero-b": "#2E1330",
+    "--c-bar": "rgba(0,0,0,0.18)",
   },
 };
 
@@ -67,14 +76,14 @@ export function getTheme(mode = "light") {
         contrastText: navyDark,
       },
       background: {
-        default: dark ? "#170B16" : "#ffffff",
-        paper: dark ? "#241326" : "#ffffff",
+        default: dark ? "#2E1330" : "#ffffff",
+        paper: dark ? "#3A1A3C" : "#ffffff",
       },
       text: {
-        primary: dark ? "#EFE6EE" : "#2A1B2C",
-        secondary: dark ? "#B8ABBA" : "#5E5663",
+        primary: dark ? "#F1E8F1" : "#2A1B2C",
+        secondary: dark ? "#C9BBCB" : "#5E5663",
       },
-      divider: dark ? "rgba(217,168,78,0.25)" : "rgba(78, 34, 73, 0.12)",
+      divider: dark ? "rgba(217,168,78,0.28)" : "rgba(78, 34, 73, 0.12)",
     },
     typography: {
       fontFamily: '"Figtree", "Helvetica Neue", Arial, sans-serif',
@@ -93,8 +102,8 @@ export function getTheme(mode = "light") {
         styleOverrides: {
           ":root": tokens.light,
           ':root[data-theme="dark"]': tokens.dark,
-          body: { scrollBehavior: "smooth" },
-          html: { scrollBehavior: "smooth" },
+          body: { scrollBehavior: "smooth", overflowX: "clip" },
+          html: { scrollBehavior: "smooth", overflowX: "clip" },
           "#root": { minHeight: "100vh" },
         },
       },

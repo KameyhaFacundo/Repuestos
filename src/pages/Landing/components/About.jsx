@@ -16,7 +16,7 @@ function About() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "5fr 6fr" },
+            gridTemplateColumns: { xs: "minmax(0, 1fr)", md: "5fr 6fr" },
             gap: { xs: 6, md: 10 },
             alignItems: "center",
           }}

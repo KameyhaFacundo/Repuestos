@@ -108,7 +108,7 @@ function Guides() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "4fr 7fr" },
+            gridTemplateColumns: { xs: "minmax(0, 1fr)", md: "4fr 7fr" },
             gap: { xs: 5, md: 10 },
             alignItems: "start",
           }}
@@ -119,7 +119,7 @@ function Guides() {
             sx={{ position: { md: "sticky" }, top: { md: 120 } }}
           />
 
-          <Box>
+          <Box sx={{ minWidth: 0 }}>
             <Tabs
               value={tab}
               onChange={(_, value) => setTab(value)}

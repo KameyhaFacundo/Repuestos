@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   AppBar,
   Box,
@@ -31,27 +31,16 @@ function Logo() {
 function Navbar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const solid = scrolled || isMobile;
 
   return (
     <AppBar
       position="fixed"
       elevation={0}
       sx={{
-        backgroundColor: solid ? brand.navyDark : "transparent",
-                boxShadow: solid ? "0 1px 0 rgba(217,168,78,0.35)" : "none",
-        transition: "background-color 0.3s ease, box-shadow 0.3s ease",
-      }}
+        backgroundColor: brand.navyDark,
+                boxShadow: "0 1px 0 rgba(217,168,78,0.35)",
+              }}
     >
       <Container>
         <Toolbar disableGutters sx={{ minHeight: { xs: 60, md: 72 }, justifyContent: "space-between" }}>

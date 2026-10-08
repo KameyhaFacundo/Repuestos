@@ -20,9 +20,9 @@ function Hero() {
       component="section"
       sx={{
         position: "relative",
-        backgroundColor: brand.navy,
-        backgroundImage: `radial-gradient(ellipse at 80% 35%, rgba(217,168,78,0.16), transparent 55%), linear-gradient(180deg, ${brand.navy} 0%, ${brand.navyDark} 100%)`,
-        color: "#ffffff",
+        backgroundColor: brand.heroA,
+        backgroundImage: `radial-gradient(ellipse at 80% 35%, rgba(217,168,78,0.16), transparent 55%), linear-gradient(180deg, ${brand.heroA} 0%, ${brand.heroB} 100%)`,
+        color: brand.ink,
         pt: { xs: 15, md: 19 },
         overflow: "hidden",
         scrollMarginTop: "88px",
@@ -37,24 +37,27 @@ function Hero() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "1.25fr 0.75fr" },
+            gridTemplateColumns: { xs: "minmax(0, 1fr)", md: "1.25fr 0.75fr" },
             gap: { xs: 6, md: 8 },
             alignItems: "center",
             pb: { xs: 8, md: 12 },
           }}
         >
           <Box>
-            <LogoSymbol
+            <Box
               sx={{
-                display: { xs: "block", md: "none" },
-                width: 96,
+                display: { xs: "inline-block", md: "none" },
+                backgroundColor: brand.navy,
+                borderRadius: 1,
+                p: 1.5,
                 mb: 3,
-                animation: "symbolIn 1.2s ease-out both",
               }}
-            />
+            >
+              <LogoSymbol sx={{ width: 72, animation: "symbolIn 1.2s ease-out both" }} />
+            </Box>
             <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 4 }}>
               <Box sx={{ width: 40, height: "1px", backgroundColor: brand.gold }} />
-              <Typography sx={{ color: brand.goldLight, fontSize: "1rem", letterSpacing: "0.04em" }}>
+              <Typography sx={{ color: brand.goldText, fontSize: "1rem", letterSpacing: "0.04em" }}>
                 {firm.lawyer}, abogada
               </Typography>
             </Stack>
@@ -62,7 +65,7 @@ function Hero() {
               variant="h1"
               sx={{
                 fontSize: { xs: "2.8rem", sm: "4.2rem", md: "5.3rem" },
-                color: "#ffffff",
+                color: brand.heading,
                 mb: 4,
               }}
             >
@@ -73,7 +76,7 @@ function Hero() {
             <Typography
               sx={{
                 fontSize: { xs: "1.05rem", md: "1.18rem" },
-                color: "rgba(255,255,255,0.8)",
+                color: brand.muted,
                 lineHeight: 1.75,
                 mb: 5,
                 maxWidth: 540,
@@ -99,9 +102,9 @@ function Hero() {
                 variant="outlined"
                 size="large"
                 sx={{
-                  color: "#ffffff",
-                  borderColor: "rgba(255,255,255,0.35)",
-                  "&:hover": { borderColor: brand.gold, color: brand.goldLight },
+                  color: brand.heading,
+                  borderColor: brand.line,
+                  "&:hover": { borderColor: brand.gold, color: brand.goldText },
                 }}
               >
                 Ver áreas de trabajo
@@ -109,7 +112,7 @@ function Hero() {
             </Stack>
 
             <Box sx={{ mt: 6 }}>
-              <Typography sx={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", mb: 1.5 }}>
+              <Typography sx={{ color: brand.muted, fontSize: "0.95rem", mb: 1.5 }}>
                 ¿Cuál es tu situación? Tocá y me escribís directo:
               </Typography>
               <Stack direction="row" useFlexGap flexWrap="wrap" spacing={1.25}>
@@ -124,8 +127,8 @@ function Hero() {
                       px: 2,
                       py: 0.9,
                       borderRadius: 999,
-                      border: "1px solid rgba(217,168,78,0.55)",
-                      color: brand.goldLight,
+                      border: "1px solid rgba(184,138,50,0.6)",
+                      color: brand.goldText,
                       fontSize: "0.92rem",
                       textDecoration: "none",
                       transition: "background-color .2s, color .2s",
@@ -152,7 +155,7 @@ function Hero() {
               sx={{
                 position: "relative",
                 borderRadius: "170px 170px 4px 4px",
-                backgroundColor: "rgba(255,255,255,0.04)",
+                backgroundColor: brand.navy,
                 border: "1px solid rgba(217,168,78,0.18)",
                 px: 6,
                 pt: 12,
@@ -171,12 +174,12 @@ function Hero() {
         </Box>
       </Container>
 
-      <Box sx={{ borderTop: "1px solid rgba(217,168,78,0.28)", backgroundColor: "rgba(0,0,0,0.18)" }}>
+      <Box sx={{ borderTop: `1px solid ${brand.line}`, backgroundColor: brand.bar }}>
         <Container>
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+              gridTemplateColumns: { xs: "minmax(0, 1fr)", md: "repeat(3, 1fr)" },
             }}
           >
             {facts.map((item, index) => {
@@ -194,17 +197,17 @@ function Hero() {
                     px: { md: index === 0 ? 0 : 4 },
                     color: "inherit",
                     textDecoration: "none",
-                    borderLeft: { md: index === 0 ? "none" : "1px solid rgba(217,168,78,0.2)" },
-                    borderTop: { xs: index === 0 ? "none" : "1px solid rgba(217,168,78,0.2)", md: "none" },
-                    "&:hover .fact-value": item.href ? { color: brand.goldLight } : {},
+                    borderLeft: { md: index === 0 ? "none" : `1px solid ${brand.line}` },
+                    borderTop: { xs: index === 0 ? "none" : `1px solid ${brand.line}`, md: "none" },
+                    "&:hover .fact-value": item.href ? { color: brand.goldText } : {},
                   }}
                 >
-                  <Icon sx={{ color: brand.gold }} />
+                  <Icon sx={{ color: brand.goldText }} />
                   <Box>
-                    <Typography sx={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.55)" }}>
+                    <Typography sx={{ fontSize: "0.82rem", color: brand.muted }}>
                       {item.label}
                     </Typography>
-                    <Typography className="fact-value" sx={{ fontWeight: 500, transition: "color .2s" }}>
+                    <Typography className="fact-value" sx={{ fontWeight: 500, color: brand.ink, transition: "color .2s" }}>
                       {item.value}
                     </Typography>
                   </Box>

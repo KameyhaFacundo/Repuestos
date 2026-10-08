@@ -23,7 +23,7 @@ function Faq() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "4fr 7fr" },
+            gridTemplateColumns: { xs: "minmax(0, 1fr)", md: "4fr 7fr" },
             gap: { xs: 5, md: 10 },
             alignItems: "start",
           }}

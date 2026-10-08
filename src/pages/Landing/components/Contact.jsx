@@ -47,8 +47,7 @@ function Contact() {
       component="section"
       sx={{
         py: { xs: 9, md: 14 },
-        backgroundColor: brand.navy,
-        backgroundImage: `linear-gradient(180deg, ${brand.navy} 0%, ${brand.navyDark} 100%)`,
+        backgroundColor: brand.surfaceAlt,
         scrollMarginTop: "88px",
       }}
     >
@@ -56,14 +55,13 @@ function Contact() {
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "5fr 6fr" },
+            gridTemplateColumns: { xs: "minmax(0, 1fr)", md: "5fr 6fr" },
             gap: { xs: 6, md: 10 },
             alignItems: "start",
           }}
         >
           <Stack spacing={4}>
             <SectionHeading
-              light
               title="Hablemos de tu caso"
               subtitle="Completá el formulario o escribime por WhatsApp. Te respondo a la brevedad."
               sx={{ mb: 0 }}
@@ -73,12 +71,12 @@ function Contact() {
                 const Icon = item.icon;
                 return (
                   <Stack key={item.label} direction="row" spacing={2} alignItems="flex-start">
-                    <Icon sx={{ color: brand.gold, mt: "2px" }} />
+                    <Icon sx={{ color: brand.goldText, mt: "2px" }} />
                     <Box>
-                      <Typography sx={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.55)" }}>
+                      <Typography sx={{ fontSize: "0.85rem", color: brand.muted }}>
                         {item.label}
                       </Typography>
-                      <Typography sx={{ color: "#ffffff", fontSize: "1.05rem" }}>{item.value}</Typography>
+                      <Typography sx={{ color: brand.ink, fontSize: "1.05rem" }}>{item.value}</Typography>
                     </Box>
                   </Stack>
                 );
@@ -88,7 +86,7 @@ function Contact() {
               sx={{
                 borderRadius: 1,
                 overflow: "hidden",
-                border: "1px solid rgba(217,168,78,0.3)",
+                border: `1px solid ${brand.line}`,
                 height: 240,
               }}
             >
@@ -117,7 +115,7 @@ function Contact() {
             <Box
               sx={{
                 display: "grid",
-                gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
+                gridTemplateColumns: { xs: "minmax(0, 1fr)", sm: "1fr 1fr" },
                 gap: 2,
               }}
             >
