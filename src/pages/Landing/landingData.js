@@ -5,6 +5,7 @@ export const firm = {
   tagline: "Abogada",
   phone: "+54 381 513-6691",
   phoneRaw: "+543815136691",
+  email: "abogamosporusted2022@gmail.com",
   whatsappLink: "https://wa.me/5493815136691",
   address: "24 de Septiembre 650, San Miguel de Tucumán",
   mapEmbed:
@@ -55,6 +56,12 @@ export const practiceAreas = [
       "Redacción de contratos para quien alquila o quiere alquilar un departamento, casa u oficina. Asesoramiento integral y honorarios accesibles.",
   },
   {
+    icon: "sociedades",
+    title: "Constitución de sociedades",
+    description:
+      "Asesoramiento y trámites para constituir tu empresa o sociedad, desde la elección del tipo societario hasta su inscripción.",
+  },
+  {
     icon: "danios",
     title: "Daños y perjuicios",
     description:
@@ -67,6 +74,7 @@ export const situations = [
   { label: "Quiero divorciarme", message: "Quiero divorciarme" },
   { label: "Cuota alimentaria", message: "Necesito asesoramiento sobre cuota alimentaria" },
   { label: "Alquilar o redactar un contrato", message: "Necesito un contrato de alquiler" },
+  { label: "Quiero abrir una empresa", message: "Quiero constituir una sociedad" },
   { label: "Tuve un accidente", message: "Tuve un accidente de tránsito" },
 ];
 

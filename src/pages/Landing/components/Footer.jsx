@@ -4,6 +4,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PlaceIcon from "@mui/icons-material/Place";
+import EmailIcon from "@mui/icons-material/Email";
 import LogoImage from "./LogoImage";
 import { brand } from "../../../theme/theme";
 import { firm, navLinks, practiceAreas } from "../landingData";
@@ -62,6 +63,17 @@ function Footer() {
                 <PhoneIcon sx={{ fontSize: 18, color: brand.gold }} />
                 <span>{firm.phone}</span>
               </Stack>
+              <Stack
+                component="a"
+                href={`mailto:${firm.email}`}
+                direction="row"
+                spacing={1}
+                alignItems="center"
+                sx={{ ...linkStyle, wordBreak: "break-all" }}
+              >
+                <EmailIcon sx={{ fontSize: 18, color: brand.gold }} />
+                <span>{firm.email}</span>
+              </Stack>
               <Stack direction="row" spacing={1} alignItems="flex-start" sx={{ color: "rgba(255,255,255,0.72)", fontSize: "0.95rem" }}>
                 <PlaceIcon sx={{ fontSize: 18, color: brand.gold, mt: "2px" }} />
                 <span>{firm.address}</span>
@@ -110,7 +122,7 @@ function Footer() {
           <Box>
             <Typography sx={columnTitle}>Áreas</Typography>
             <Stack spacing={1.5}>
-              {practiceAreas.slice(0, 5).map((area) => (
+              {practiceAreas.map((area) => (
                 <Typography key={area.title} component="a" href="#areas" sx={linkStyle}>
                   {area.title}
                 </Typography>

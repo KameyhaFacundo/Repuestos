@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import PlaceIcon from "@mui/icons-material/Place";
 import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { brand } from "../../../theme/theme";
@@ -18,7 +19,8 @@ import SectionHeading from "./SectionHeading";
 
 const contactItems = [
   { icon: PlaceIcon, label: "Dirección", value: firm.address },
-  { icon: PhoneIcon, label: "Teléfono", value: firm.phone },
+  { icon: PhoneIcon, label: "Teléfono", value: firm.phone, href: `tel:${firm.phoneRaw}` },
+  { icon: EmailIcon, label: "Correo", value: firm.email, href: `mailto:${firm.email}` },
   { icon: AccessTimeIcon, label: "Urgencias", value: firm.hours },
 ];
 
@@ -76,7 +78,19 @@ function Contact() {
                       <Typography sx={{ fontSize: "0.85rem", color: brand.muted }}>
                         {item.label}
                       </Typography>
-                      <Typography sx={{ color: brand.ink, fontSize: "1.05rem" }}>{item.value}</Typography>
+                      <Typography
+                        component={item.href ? "a" : "p"}
+                        href={item.href}
+                        sx={{
+                          color: brand.ink,
+                          fontSize: "1.05rem",
+                          textDecoration: "none",
+                          wordBreak: "break-word",
+                          "&:hover": item.href ? { color: brand.goldText } : {},
+                        }}
+                      >
+                        {item.value}
+                      </Typography>
                     </Box>
                   </Stack>
                 );

@@ -77,7 +77,7 @@ function About() {
             <SectionHeading title="El derecho, al alcance de las personas" sx={{ maxWidth: 560 }} />
             <Typography sx={{ color: brand.muted, lineHeight: 1.85, mb: 4, fontSize: "1.05rem", maxWidth: 560 }}>
               Soy María José Fernández, abogada en San Miguel de Tucumán. Me dedico a
-              derecho de familia y sucesiones, laboral, daños y perjuicios y previsional.
+              derecho de familia y sucesiones, laboral, daños y perjuicios, previsional y constitución de sociedades.
               Te escucho, te explico cada paso con claridad y te acompaño hasta resolver
               tu caso.
             </Typography>

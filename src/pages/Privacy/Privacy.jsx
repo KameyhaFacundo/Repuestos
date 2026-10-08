@@ -10,7 +10,7 @@ import ThemeToggle from "../../theme/ThemeToggle";
 const sections = [
   {
     title: "Quién es responsable",
-    body: `El responsable del tratamiento de tus datos es ${firm.lawyer}, abogada, con domicilio profesional en ${firm.address}. Podés comunicarte por teléfono o WhatsApp al ${firm.phone}.`,
+    body: `El responsable del tratamiento de tus datos es ${firm.lawyer}, abogada, con domicilio profesional en ${firm.address}. Podés comunicarte por teléfono o WhatsApp al ${firm.phone}, o por correo a ${firm.email}.`,
   },
   {
     title: "Qué datos se recogen",
@@ -34,7 +34,7 @@ const sections = [
   },
   {
     title: "Tus derechos",
-    body: `Según la Ley N.º 25.326 de Protección de los Datos Personales, podés pedir acceso, rectificación o eliminación de tus datos escribiendo o llamando al ${firm.phone}. La Agencia de Acceso a la Información Pública (AAIP) es el órgano de control de esta ley y atiende denuncias y reclamos.`,
+    body: `Según la Ley N.º 25.326 de Protección de los Datos Personales, podés pedir acceso, rectificación o eliminación de tus datos escribiendo a ${firm.email} o llamando al ${firm.phone}. La Agencia de Acceso a la Información Pública (AAIP) es el órgano de control de esta ley y atiende denuncias y reclamos.`,
   },
   {
     title: "Enlaces externos y cambios",

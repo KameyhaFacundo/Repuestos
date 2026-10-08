@@ -1,5 +1,17 @@
 import { useState } from "react";
-import { Box, Button, Checkbox, Container, FormControlLabel, Stack, Tab, Tabs, Typography } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Button,
+  Checkbox,
+  Container,
+  FormControlLabel,
+  Stack,
+  Typography,
+} from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { brand } from "../../../theme/theme";
 import { divorceChecklist, firm, guides } from "../landingData";
@@ -95,8 +107,11 @@ function StepsGuide({ guide }) {
 }
 
 function Guides() {
-  const [tab, setTab] = useState(0);
-  const tabs = [{ label: "Documentación para divorciarte" }, ...guides.map((guide) => ({ label: guide.label }))];
+  const [open, setOpen] = useState(0);
+  const items = [
+    { title: "Documentación para divorciarte", content: <DivorceChecklist /> },
+    ...guides.map((guide) => ({ title: guide.label, content: <StepsGuide guide={guide} /> })),
+  ];
 
   return (
     <Box
@@ -119,26 +134,36 @@ function Guides() {
             sx={{ position: { md: "sticky" }, top: { md: 120 } }}
           />
 
-          <Box sx={{ minWidth: 0 }}>
-            <Tabs
-              value={tab}
-              onChange={(_, value) => setTab(value)}
-              variant="scrollable"
-              scrollButtons="auto"
-              allowScrollButtonsMobile
-              TabIndicatorProps={{ style: { backgroundColor: brand.gold, height: 3 } }}
-              sx={{ borderBottom: `1px solid ${brand.line}`, mb: 4 }}
-            >
-              {tabs.map((item) => (
-                <Tab
-                  key={item.label}
-                  label={item.label}
-                  sx={{ color: brand.muted, fontWeight: 600, "&.Mui-selected": { color: brand.heading } }}
-                />
-              ))}
-            </Tabs>
-
-            {tab === 0 ? <DivorceChecklist /> : <StepsGuide guide={guides[tab - 1]} />}
+          <Box sx={{ borderTop: `1px solid ${brand.line}` }}>
+            {items.map((item, index) => (
+              <Accordion
+                key={item.title}
+                elevation={0}
+                disableGutters
+                expanded={open === index}
+                onChange={(_, isOpen) => setOpen(isOpen ? index : -1)}
+                sx={{
+                  borderBottom: `1px solid ${brand.line}`,
+                  "&:before": { display: "none" },
+                  backgroundColor: "transparent",
+                  "& .MuiAccordionSummary-expandIconWrapper": { transition: "transform .25s" },
+                  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": { transform: "rotate(45deg)" },
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<AddIcon sx={{ color: brand.gold }} />}
+                  sx={{ px: 0, "& .MuiAccordionSummary-content": { my: 2.5 } }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{ color: brand.heading, fontSize: { xs: "1.3rem", md: "1.5rem" }, pr: 2 }}
+                  >
+                    {item.title}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ px: 0, pt: 0, pb: 4 }}>{item.content}</AccordionDetails>
+              </Accordion>
+            ))}
           </Box>
         </Box>
       </Container>

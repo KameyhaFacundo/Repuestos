@@ -6,6 +6,7 @@ import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import HeartBrokenIcon from "@mui/icons-material/HeartBroken";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import CarCrashIcon from "@mui/icons-material/CarCrash";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { brand } from "../../../theme/theme";
 import { firm, practiceAreas } from "../landingData";
@@ -17,6 +18,7 @@ const icons = {
   laboral: WorkIcon,
   sucesiones: AccountBalanceIcon,
   alquiler: HomeWorkIcon,
+  sociedades: BusinessCenterIcon,
   danios: CarCrashIcon,
 };
 

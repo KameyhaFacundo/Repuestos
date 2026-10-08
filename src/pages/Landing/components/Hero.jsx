@@ -83,7 +83,8 @@ function Hero() {
               }}
             >
               Familia y sucesiones, derecho laboral, daños y perjuicios, contratos de
-              alquiler y previsional, con atención personalizada y honorarios accesibles.
+              alquiler, constitución de sociedades y previsional, con atención
+              personalizada y honorarios accesibles.
             </Typography>
             <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
               <Button
