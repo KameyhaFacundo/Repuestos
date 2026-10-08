@@ -42,16 +42,15 @@ function About() {
             >
               <Box
                 component="img"
-                src="/perfil.png"
+                src="/perfil-abogada.png"
                 alt={`${firm.lawyer}, abogada`}
                 loading="lazy"
                 sx={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition: "50% 20%",
+                  objectPosition: "50% 15%",
                   display: "block",
-                  filter: "contrast(1.04) saturate(0.92)",
                 }}
               />
               <Box
