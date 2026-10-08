@@ -57,9 +57,9 @@ export const practiceAreas = [
   },
   {
     icon: "sociedades",
-    title: "Constitución de sociedades",
+    title: "Constitución de empresas y sociedades",
     description:
-      "Asesoramiento y trámites para constituir tu empresa o sociedad, desde la elección del tipo societario hasta su inscripción.",
+      "Te acompaño a constituir tu empresa o sociedad, desde elegir el tipo societario hasta su inscripción.",
   },
   {
     icon: "danios",
