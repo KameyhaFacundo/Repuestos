@@ -36,7 +36,7 @@ function Login() {
       setMyPermisos(todosLosPermisos);
       setToken(response.access_token);
       setUser(response.user);
-      navigate("/");
+      navigate("/panel");
     } catch (err) {
       setToken(null);
       localStorage.removeItem("token");
@@ -47,11 +47,11 @@ function Login() {
   };
 
   if (token) {
-    return <Navigate to="/" />;
+    return <Navigate to="/panel" />;
   }
 
   return (
-    <>
+    <div className="login-page">
       <div className="login-container">
         <div className="login-brand">
           <div className="login-brand-icon">
@@ -156,7 +156,7 @@ function Login() {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
