@@ -3,6 +3,8 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PlaceIcon from "@mui/icons-material/Place";
 import CarCrashIcon from "@mui/icons-material/CarCrash";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { brand } from "../../../theme/theme";
 import { firm, situations } from "../landingData";
 import { LogoSymbol } from "./LogoImage";
@@ -40,7 +42,7 @@ function Hero() {
             gridTemplateColumns: { xs: "minmax(0, 1fr)", md: "1.25fr 0.75fr" },
             gap: { xs: 6, md: 8 },
             alignItems: "center",
-            pb: { xs: 8, md: 12 },
+            pb: { xs: 6, md: 12 },
           }}
         >
           <Box>
@@ -86,7 +88,7 @@ function Hero() {
               alquiler, constitución de sociedades y previsional, con atención
               personalizada y honorarios accesibles.
             </Typography>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+            <Stack direction={{ xs: "column", sm: "row" }} spacing={{ xs: 1, sm: 2 }}>
               <Button
                 href={firm.whatsappLink}
                 target="_blank"
@@ -102,21 +104,33 @@ function Hero() {
                 href="#areas"
                 variant="outlined"
                 size="large"
+                endIcon={<ArrowDownwardIcon fontSize="small" />}
                 sx={{
                   color: brand.heading,
-                  borderColor: brand.line,
-                  "&:hover": { borderColor: brand.gold, color: brand.goldText },
+                  borderColor: { xs: "transparent", sm: brand.line },
+                  justifyContent: { xs: "center", sm: "center" },
+                  "&:hover": { borderColor: brand.gold, color: brand.goldText, backgroundColor: "transparent" },
                 }}
               >
                 Ver áreas de trabajo
               </Button>
             </Stack>
 
-            <Box sx={{ mt: 6 }}>
-              <Typography sx={{ color: brand.muted, fontSize: "0.95rem", mb: 1.5 }}>
-                ¿Cuál es tu situación? Tocá y me escribís directo:
+            <Box sx={{ mt: { xs: 5, md: 6 }, pt: { xs: 4, md: 0 }, borderTop: { xs: `1px solid ${brand.line}`, md: "none" } }}>
+              <Typography variant="h5" sx={{ color: brand.heading, fontSize: { xs: "1.6rem", md: "1.5rem" }, mb: 0.5 }}>
+                ¿Cuál es tu situación?
               </Typography>
-              <Stack direction="row" useFlexGap flexWrap="wrap" spacing={1.25}>
+              <Typography sx={{ color: brand.muted, fontSize: "0.95rem", mb: 2.5 }}>
+                Tocá una opción y me escribís directo por WhatsApp.
+              </Typography>
+              <Box
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: { xs: "repeat(2, minmax(0, 1fr))", sm: "repeat(3, minmax(0, 1fr))" },
+                  gap: 1.25,
+                  maxWidth: 560,
+                }}
+              >
                 {situations.map((item) => (
                   <Box
                     key={item.label}
@@ -125,21 +139,32 @@ function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{
-                      px: 2,
-                      py: 0.9,
-                      borderRadius: 999,
-                      border: "1px solid rgba(184,138,50,0.6)",
-                      color: brand.goldText,
-                      fontSize: "0.92rem",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: 1,
+                      minHeight: 58,
+                      px: 1.75,
+                      py: 1,
+                      borderRadius: 1,
+                      border: `1px solid ${brand.line}`,
+                      backgroundColor: brand.surfaceAlt,
+                      color: brand.heading,
+                      fontSize: "0.95rem",
+                      fontWeight: 500,
+                      lineHeight: 1.25,
                       textDecoration: "none",
-                      transition: "background-color .2s, color .2s",
-                      "&:hover": { backgroundColor: brand.gold, color: brand.navyDark },
+                      transition: "border-color .2s, transform .2s",
+                      "&:hover": { borderColor: brand.gold },
+                      "&:active": { transform: "scale(0.98)" },
+                      "&:hover .tile-arrow": { color: brand.goldText },
                     }}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    <ArrowOutwardIcon className="tile-arrow" sx={{ fontSize: 18, color: brand.gold, flexShrink: 0 }} />
                   </Box>
                 ))}
-              </Stack>
+              </Box>
             </Box>
           </Box>
 
@@ -194,12 +219,13 @@ function Hero() {
                   spacing={2}
                   alignItems="center"
                   sx={{
-                    py: 3,
+                    display: { xs: item.label === "Teléfono" ? "none" : "flex", md: "flex" },
+                    py: { xs: 2.25, md: 3 },
                     px: { md: index === 0 ? 0 : 4 },
                     color: "inherit",
                     textDecoration: "none",
                     borderLeft: { md: index === 0 ? "none" : `1px solid ${brand.line}` },
-                    borderTop: { xs: index === 0 ? "none" : `1px solid ${brand.line}`, md: "none" },
+                    borderTop: { xs: index === 1 ? "none" : `1px solid ${brand.line}`, md: "none" },
                     "&:hover .fact-value": item.href ? { color: brand.goldText } : {},
                   }}
                 >

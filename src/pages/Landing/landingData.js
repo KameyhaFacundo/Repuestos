@@ -73,8 +73,8 @@ export const situations = [
   { label: "Me llegó un telegrama", message: "Recibí un telegrama de mi empleador" },
   { label: "Quiero divorciarme", message: "Quiero divorciarme" },
   { label: "Cuota alimentaria", message: "Necesito asesoramiento sobre cuota alimentaria" },
-  { label: "Alquilar o redactar un contrato", message: "Necesito un contrato de alquiler" },
-  { label: "Quiero abrir una empresa", message: "Quiero constituir una sociedad" },
+  { label: "Contrato de alquiler", message: "Necesito un contrato de alquiler" },
+  { label: "Abrir una empresa", message: "Quiero constituir una sociedad" },
   { label: "Tuve un accidente", message: "Tuve un accidente de tránsito" },
 ];
 
