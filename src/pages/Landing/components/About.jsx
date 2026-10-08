@@ -3,7 +3,6 @@ import CheckIcon from "@mui/icons-material/Check";
 import { brand } from "../../../theme/theme";
 import { aboutHighlights, firm } from "../landingData";
 import SectionHeading from "./SectionHeading";
-import LogoImage from "./LogoImage";
 
 function About() {
   return (
@@ -17,7 +16,7 @@ function About() {
           sx={{
             display: "grid",
             gridTemplateColumns: { xs: "minmax(0, 1fr)", md: "5fr 6fr" },
-            gap: { xs: 6, md: 10 },
+            gap: { xs: 7, md: 10 },
             alignItems: "center",
           }}
         >
@@ -34,20 +33,44 @@ function About() {
             <Box
               sx={{
                 position: "relative",
-                backgroundColor: brand.navy,
-                backgroundImage: `radial-gradient(circle at 50% 0%, rgba(217,168,78,0.18), transparent 60%)`,
+                aspectRatio: "4 / 5",
                 borderRadius: 1,
-                px: 4,
-                py: { xs: 8, md: 11 },
-                textAlign: "center",
+                overflow: "hidden",
+                backgroundColor: brand.navy,
+                boxShadow: "0 30px 60px -32px rgba(42,16,39,0.6)",
               }}
             >
-              <LogoImage height={{ xs: 88, md: 120 }} sx={{ mx: "auto", maxWidth: "100%", objectFit: "contain" }} />
-              <Box sx={{ width: 40, height: "1px", backgroundColor: brand.gold, mx: "auto", my: 4 }} />
-              <Typography variant="h4" sx={{ color: "#ffffff" }}>
-                {firm.lawyer}
-              </Typography>
-              <Typography sx={{ color: brand.goldLight, mt: 0.5 }}>Abogada · San Miguel de Tucumán</Typography>
+              <Box
+                component="img"
+                src="/perfil.png"
+                alt={`${firm.lawyer}, abogada`}
+                loading="lazy"
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "50% 20%",
+                  display: "block",
+                  filter: "contrast(1.04) saturate(0.92)",
+                }}
+              />
+              <Box
+                sx={{
+                  position: "absolute",
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  px: 3,
+                  pt: 10,
+                  pb: 3,
+                  background: `linear-gradient(180deg, transparent 0%, ${brand.navyDark} 100%)`,
+                }}
+              >
+                <Typography variant="h4" sx={{ color: "#ffffff" }}>
+                  {firm.lawyer}
+                </Typography>
+                <Typography sx={{ color: brand.goldLight, mt: 0.5 }}>Abogada · San Miguel de Tucumán</Typography>
+              </Box>
             </Box>
           </Box>
 
