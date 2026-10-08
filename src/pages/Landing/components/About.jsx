@@ -10,7 +10,7 @@ function About() {
     <Box
       id="nosotros"
       component="section"
-      sx={{ py: { xs: 9, md: 14 }, backgroundColor: "#ffffff", scrollMarginTop: "88px" }}
+      sx={{ py: { xs: 9, md: 14 }, backgroundColor: brand.surfaceAlt, scrollMarginTop: "88px" }}
     >
       <Container>
         <Box
@@ -42,7 +42,7 @@ function About() {
                 textAlign: "center",
               }}
             >
-              <LogoImage height={150} sx={{ mx: "auto", maxWidth: "100%", objectFit: "contain" }} />
+              <LogoImage height={{ xs: 88, md: 120 }} sx={{ mx: "auto", maxWidth: "100%", objectFit: "contain" }} />
               <Box sx={{ width: 40, height: "1px", backgroundColor: brand.gold, mx: "auto", my: 4 }} />
               <Typography variant="h4" sx={{ color: "#ffffff" }}>
                 {firm.lawyer}
@@ -68,7 +68,7 @@ function About() {
                       height: 24,
                       borderRadius: "50%",
                       backgroundColor: "rgba(217,168,78,0.2)",
-                      color: brand.goldDark,
+                      color: brand.goldText,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",

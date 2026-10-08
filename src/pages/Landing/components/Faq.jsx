@@ -38,7 +38,7 @@ function Faq() {
             </Button>
           </Box>
 
-          <Box sx={{ borderTop: "1px solid rgba(78,34,73,0.18)" }}>
+          <Box sx={{ borderTop: `1px solid ${brand.line}` }}>
             {faqs.map((item, index) => (
               <Accordion
                 key={item.question}
@@ -46,7 +46,7 @@ function Faq() {
                 disableGutters
                 defaultExpanded={index === 0}
                 sx={{
-                  borderBottom: "1px solid rgba(78,34,73,0.18)",
+                  borderBottom: `1px solid ${brand.line}`,
                   "&:before": { display: "none" },
                   backgroundColor: "transparent",
                   "& .MuiAccordionSummary-expandIconWrapper": { transition: "transform .25s" },
@@ -59,7 +59,7 @@ function Faq() {
                 >
                   <Typography
                     variant="h6"
-                    sx={{ color: brand.navy, fontSize: { xs: "1.3rem", md: "1.45rem" }, pr: 2 }}
+                    sx={{ color: brand.heading, fontSize: { xs: "1.3rem", md: "1.45rem" }, pr: 2 }}
                   >
                     {item.question}
                   </Typography>

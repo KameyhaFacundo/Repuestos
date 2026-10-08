@@ -18,12 +18,14 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import PhoneIcon from "@mui/icons-material/Phone";
+import ThemeToggle from "../../../theme/ThemeToggle";
 import LogoImage from "./LogoImage";
 import { brand } from "../../../theme/theme";
-import { navLinks } from "../landingData";
+import { firm, navLinks } from "../landingData";
 
 function Logo() {
-  return <LogoImage height={72} />;
+  return <LogoImage height={{ xs: 40, md: 52 }} />;
 }
 
 function Navbar() {
@@ -52,7 +54,7 @@ function Navbar() {
       }}
     >
       <Container>
-        <Toolbar disableGutters sx={{ minHeight: 76, justifyContent: "space-between" }}>
+        <Toolbar disableGutters sx={{ minHeight: { xs: 60, md: 72 }, justifyContent: "space-between" }}>
           <Logo />
 
           {!isMobile && (
@@ -72,20 +74,31 @@ function Navbar() {
                 </Button>
               ))}
               <Button
+                href={`tel:${firm.phoneRaw}`}
+                startIcon={<PhoneIcon fontSize="small" />}
+                sx={{ color: brand.goldLight, ml: 1, "&:hover": { backgroundColor: "transparent", color: "#ffffff" } }}
+              >
+                {firm.phone}
+              </Button>
+              <Button
                 href="#contacto"
                 variant="contained"
                 color="secondary"
-                sx={{ ml: 2 }}
+                sx={{ ml: 1 }}
               >
                 Consultar
               </Button>
+              <ThemeToggle sx={{ ml: 0.5 }} />
             </Stack>
           )}
 
           {isMobile && (
-            <IconButton onClick={() => setOpen(true)} sx={{ color: "#ffffff" }}>
-              <MenuIcon />
-            </IconButton>
+            <Stack direction="row" alignItems="center">
+              <ThemeToggle />
+              <IconButton onClick={() => setOpen(true)} sx={{ color: "#ffffff" }} aria-label="Abrir menú">
+                <MenuIcon />
+              </IconButton>
+            </Stack>
           )}
         </Toolbar>
       </Container>

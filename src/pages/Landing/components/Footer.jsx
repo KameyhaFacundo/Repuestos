@@ -1,4 +1,5 @@
 import { Box, Container, Divider, Stack, Typography } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LogoImage from "./LogoImage";
@@ -10,7 +11,7 @@ function Footer() {
 
   return (
     <Box component="footer" sx={{ backgroundColor: brand.navyDark, color: "#ffffff", borderTop: "1px solid rgba(217,168,78,0.3)" }}>
-      <Container sx={{ py: { xs: 6, md: 8 } }}>
+      <Container sx={{ pt: { xs: 6, md: 8 }, pb: { xs: 12, md: 8 } }}>
         <Box
           sx={{
             display: "grid",
@@ -19,7 +20,7 @@ function Footer() {
           }}
         >
           <Box>
-            <LogoImage height={96} sx={{ mb: 2 }} />
+            <LogoImage height={{ xs: 56, md: 72 }} sx={{ mb: 2 }} />
             <Typography sx={{ color: "rgba(255,255,255,0.62)", lineHeight: 1.7, maxWidth: 360 }}>
               María José Fernández · Abogada. Asesoramiento legal integral en San Miguel de Tucumán.
             </Typography>
@@ -115,6 +116,18 @@ function Footer() {
         >
           <Typography sx={{ color: "rgba(255,255,255,0.5)", fontSize: "0.82rem" }}>
             © {year} {firm.name} · {firm.lawyer}. Todos los derechos reservados.
+          </Typography>
+          <Typography
+            component={RouterLink}
+            to="/privacidad"
+            sx={{
+              color: "rgba(255,255,255,0.6)",
+              fontSize: "0.82rem",
+              textDecoration: "none",
+              "&:hover": { color: brand.goldLight },
+            }}
+          >
+            Política de privacidad
           </Typography>
         </Stack>
       </Container>

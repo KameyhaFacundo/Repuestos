@@ -42,7 +42,7 @@ function PracticeAreas() {
             sx={{ position: { md: "sticky" }, top: { md: 120 } }}
           />
 
-          <Box sx={{ borderTop: "1px solid rgba(78,34,73,0.18)" }}>
+          <Box sx={{ borderTop: `1px solid ${brand.line}` }}>
             {practiceAreas.map((area) => {
               const Icon = icons[area.icon] || GavelIcon;
               const href = `${firm.whatsappLink}?text=${encodeURIComponent(
@@ -63,11 +63,11 @@ function PracticeAreas() {
                     px: { xs: 1, md: 2 },
                     color: "inherit",
                     textDecoration: "none",
-                    borderBottom: "1px solid rgba(78,34,73,0.18)",
+                    borderBottom: `1px solid ${brand.line}`,
                     transition: "background-color .25s ease",
-                    "&:hover": { backgroundColor: "#ffffff" },
-                    "&:hover .area-arrow": { transform: "translate(3px,-3px)", color: brand.navy },
-                    "&:hover .area-title": { color: brand.goldDark },
+                    "&:hover": { backgroundColor: brand.surfaceAlt },
+                    "&:hover .area-arrow": { transform: "translate(3px,-3px)", color: brand.heading },
+                    "&:hover .area-title": { color: brand.goldText },
                     "&:focus-visible": { outline: `2px solid ${brand.gold}`, outlineOffset: -2 },
                   }}
                 >
@@ -76,7 +76,7 @@ function PracticeAreas() {
                     <Typography
                       className="area-title"
                       variant="h4"
-                      sx={{ color: brand.navy, fontSize: { xs: "1.6rem", md: "2rem" }, mb: 0.75, transition: "color .25s" }}
+                      sx={{ color: brand.heading, fontSize: { xs: "1.6rem", md: "2rem" }, mb: 0.75, transition: "color .25s" }}
                     >
                       {area.title}
                     </Typography>

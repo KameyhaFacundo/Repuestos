@@ -4,7 +4,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import PlaceIcon from "@mui/icons-material/Place";
 import CarCrashIcon from "@mui/icons-material/CarCrash";
 import { brand } from "../../../theme/theme";
-import { firm } from "../landingData";
+import { firm, situations } from "../landingData";
 import { LogoSymbol } from "./LogoImage";
 
 const facts = [
@@ -107,6 +107,36 @@ function Hero() {
                 Ver áreas de trabajo
               </Button>
             </Stack>
+
+            <Box sx={{ mt: 6 }}>
+              <Typography sx={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", mb: 1.5 }}>
+                ¿Cuál es tu situación? Tocá y me escribís directo:
+              </Typography>
+              <Stack direction="row" useFlexGap flexWrap="wrap" spacing={1.25}>
+                {situations.map((item) => (
+                  <Box
+                    key={item.label}
+                    component="a"
+                    href={`${firm.whatsappLink}?text=${encodeURIComponent(`Hola María José, ${item.message}.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      px: 2,
+                      py: 0.9,
+                      borderRadius: 999,
+                      border: "1px solid rgba(217,168,78,0.55)",
+                      color: brand.goldLight,
+                      fontSize: "0.92rem",
+                      textDecoration: "none",
+                      transition: "background-color .2s, color .2s",
+                      "&:hover": { backgroundColor: brand.gold, color: brand.navyDark },
+                    }}
+                  >
+                    {item.label}
+                  </Box>
+                ))}
+              </Stack>
+            </Box>
           </Box>
 
           <Box sx={{ display: { xs: "none", md: "block" }, position: "relative" }}>

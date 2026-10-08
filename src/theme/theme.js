@@ -6,10 +6,9 @@ const navyDark = "#2A1027";
 const gold = "#D9A84E";
 const goldLight = "#EBC77E";
 const goldDark = "#B88A32";
-const ink = "#2A1B2C";
-const muted = "#5E5663";
-const ivory = "#F7F2EA";
 
+// Colores fijos: las secciones moradas se ven igual en modo claro y oscuro.
+// Los tokens semánticos (surface, heading, ink...) cambian con el modo vía variables CSS.
 export const brand = {
   navy,
   navyLight,
@@ -17,123 +16,101 @@ export const brand = {
   gold,
   goldLight,
   goldDark,
-  ink,
-  muted,
-  ivory,
+  surface: "var(--c-surface)",
+  surfaceAlt: "var(--c-surface-alt)",
+  heading: "var(--c-heading)",
+  ink: "var(--c-ink)",
+  muted: "var(--c-muted)",
+  line: "var(--c-line)",
+  goldText: "var(--c-gold-text)",
+  ivory: "var(--c-surface)",
 };
 
-const theme = createTheme({
-  palette: {
-    mode: "light",
-    primary: {
-      main: navy,
-      light: navyLight,
-      dark: navyDark,
-      contrastText: "#ffffff",
-    },
-    secondary: {
-      main: gold,
-      light: goldLight,
-      dark: goldDark,
-      contrastText: navyDark,
-    },
-    background: {
-      default: "#ffffff",
-      paper: "#ffffff",
-    },
-    text: {
-      primary: ink,
-      secondary: muted,
-    },
-    divider: "rgba(78,34,73, 0.12)",
+const tokens = {
+  light: {
+    "--c-surface": "#F7F2EA",
+    "--c-surface-alt": "#FFFFFF",
+    "--c-heading": navy,
+    "--c-ink": "#2A1B2C",
+    "--c-muted": "#5E5663",
+    "--c-line": "rgba(78,34,73,0.18)",
+    "--c-gold-text": "#A56E36",
   },
-  typography: {
-    fontFamily: '"Figtree", "Helvetica Neue", Arial, sans-serif',
-    h1: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
-      fontWeight: 600,
-      lineHeight: 1.05,
-      letterSpacing: "-0.015em",
-    },
-    h2: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
-      fontWeight: 600,
-      lineHeight: 1.18,
-      letterSpacing: "-0.01em",
-    },
-    h3: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
-      fontWeight: 600,
-      lineHeight: 1.22,
-    },
-    h4: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
-      fontWeight: 600,
-    },
-    h5: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
-      fontWeight: 600,
-    },
-    h6: {
-      fontFamily: '"Cormorant Garamond", Georgia, serif',
-      fontWeight: 600,
-    },
-    button: {
-      textTransform: "none",
-      fontWeight: 600,
-      letterSpacing: "0.01em",
-    },
-    overline: {
-      fontWeight: 600,
-      letterSpacing: "0.22em",
-    },
+  dark: {
+    "--c-surface": "#170B16",
+    "--c-surface-alt": "#1F1020",
+    "--c-heading": "#F4E6C8",
+    "--c-ink": "#EFE6EE",
+    "--c-muted": "#B8ABBA",
+    "--c-line": "rgba(217,168,78,0.25)",
+    "--c-gold-text": "#E3B75F",
   },
-  shape: {
-    borderRadius: 4,
-  },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        body: {
-          backgroundColor: "#ffffff",
-          scrollBehavior: "smooth",
-        },
-        html: {
-          scrollBehavior: "smooth",
-        },
-        "#root": {
-          minHeight: "100vh",
-        },
+};
+
+const headingFont = '"Cormorant Garamond", Georgia, serif';
+
+export function getTheme(mode = "light") {
+  const dark = mode === "dark";
+  return createTheme({
+    palette: {
+      mode,
+      primary: {
+        main: dark ? goldLight : navy,
+        light: navyLight,
+        dark: navyDark,
+        contrastText: dark ? navyDark : "#ffffff",
       },
+      secondary: {
+        main: gold,
+        light: goldLight,
+        dark: goldDark,
+        contrastText: navyDark,
+      },
+      background: {
+        default: dark ? "#170B16" : "#ffffff",
+        paper: dark ? "#241326" : "#ffffff",
+      },
+      text: {
+        primary: dark ? "#EFE6EE" : "#2A1B2C",
+        secondary: dark ? "#B8ABBA" : "#5E5663",
+      },
+      divider: dark ? "rgba(217,168,78,0.25)" : "rgba(78, 34, 73, 0.12)",
     },
-    MuiButton: {
-      defaultProps: {
-        disableElevation: true,
-      },
-      styleOverrides: {
-        root: {
-          paddingInline: 24,
-          paddingBlock: 10,
-          borderRadius: 2,
-        },
-        containedSecondary: {
-          color: navyDark,
-        },
-      },
+    typography: {
+      fontFamily: '"Figtree", "Helvetica Neue", Arial, sans-serif',
+      h1: { fontFamily: headingFont, fontWeight: 600, lineHeight: 1.05, letterSpacing: "-0.015em" },
+      h2: { fontFamily: headingFont, fontWeight: 600, lineHeight: 1.18, letterSpacing: "-0.01em" },
+      h3: { fontFamily: headingFont, fontWeight: 600, lineHeight: 1.22 },
+      h4: { fontFamily: headingFont, fontWeight: 600 },
+      h5: { fontFamily: headingFont, fontWeight: 600 },
+      h6: { fontFamily: headingFont, fontWeight: 600 },
+      button: { textTransform: "none", fontWeight: 600, letterSpacing: "0.01em" },
+      overline: { fontWeight: 600, letterSpacing: "0.22em" },
     },
-    MuiContainer: {
-      defaultProps: {
-        maxWidth: "lg",
-      },
-    },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          backgroundImage: "none",
+    shape: { borderRadius: 4 },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          ":root": tokens.light,
+          ':root[data-theme="dark"]': tokens.dark,
+          body: { scrollBehavior: "smooth" },
+          html: { scrollBehavior: "smooth" },
+          "#root": { minHeight: "100vh" },
         },
       },
+      MuiButton: {
+        defaultProps: { disableElevation: true },
+        styleOverrides: {
+          root: { paddingInline: 24, paddingBlock: 10, borderRadius: 2 },
+          containedSecondary: { color: navyDark },
+        },
+      },
+      MuiContainer: { defaultProps: { maxWidth: "lg" } },
+      MuiPaper: { styleOverrides: { root: { backgroundImage: "none" } } },
     },
-  },
-});
+  });
+}
+
+const theme = getTheme("light");
 
 export default theme;

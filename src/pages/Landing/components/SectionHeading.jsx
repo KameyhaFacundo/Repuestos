@@ -8,7 +8,7 @@ function SectionHeading({ title, subtitle, light = false, sx }) {
         variant="h2"
         sx={{
           fontSize: { xs: "2.4rem", md: "3.4rem" },
-          color: light ? "#ffffff" : brand.navy,
+          color: light ? "#ffffff" : brand.heading,
         }}
       >
         {title}

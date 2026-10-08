@@ -18,6 +18,7 @@ export const navLinks = [
   { label: "Áreas", href: "#areas" },
   { label: "Sobre mí", href: "#nosotros" },
   { label: "Proceso", href: "#proceso" },
+  { label: "Guías", href: "#guias" },
   { label: "Consultas", href: "#faq" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -61,6 +62,14 @@ export const practiceAreas = [
   },
 ];
 
+export const situations = [
+  { label: "Me llegó un telegrama", message: "Recibí un telegrama de mi empleador" },
+  { label: "Quiero divorciarme", message: "Quiero divorciarme" },
+  { label: "Cuota alimentaria", message: "Necesito asesoramiento sobre cuota alimentaria" },
+  { label: "Alquilar o redactar un contrato", message: "Necesito un contrato de alquiler" },
+  { label: "Tuve un accidente", message: "Tuve un accidente de tránsito" },
+];
+
 export const aboutHighlights = [
   "Atención personalizada: tu caso lo lleva directamente la abogada.",
   "Asesoramiento integral, desde la consulta hasta la representación en audiencias.",
@@ -83,6 +92,41 @@ export const processSteps = [
     title: "Acompañamiento",
     description:
       "Te represento en audiencias y trámites, y te mantengo informado en cada etapa del caso.",
+  },
+];
+
+export const divorceChecklist = [
+  "Acta de matrimonio",
+  "Títulos de los bienes en común",
+  "Actas de nacimiento de los hijos en común",
+];
+
+export const guides = [
+  {
+    label: "Me llegó un telegrama",
+    intro:
+      "Un telegrama laboral puede cambiar tu situación. Antes de responder o firmar cualquier cosa, tené en cuenta lo siguiente.",
+    steps: [
+      "No renuncies, aunque te lo pidan o te lo insinúen.",
+      "Guardá el telegrama original y el sobre. No lo tires ni lo rompas.",
+      "No firmes nada que no hayas podido leer y consultar.",
+      "Anotá cuándo lo recibiste: los plazos para responder son cortos.",
+      "Escribime cuanto antes para revisar tu caso.",
+    ],
+    message: "Hola María José, recibí un telegrama de mi empleador y quiero asesorarme.",
+  },
+  {
+    label: "Tuve un accidente de tránsito",
+    intro:
+      "Lo primero es tu salud. Después, estos pasos ayudan a que tus derechos queden protegidos.",
+    steps: [
+      "Si hay heridos, llamá a emergencias y atendete médicamente. Guardá toda la documentación médica.",
+      "Sacá fotos de los vehículos, del lugar y de los daños.",
+      "Pedí los datos del otro conductor, del vehículo y de su seguro.",
+      "No firmes acuerdos ni aceptes ofrecimientos sin asesorarte antes.",
+      "Escribime o llamame: atiendo accidentes las 24 horas.",
+    ],
+    message: "Hola María José, tuve un accidente de tránsito y necesito asesoramiento.",
   },
 ];
 
