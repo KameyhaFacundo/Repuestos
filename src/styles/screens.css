@@ -1,0 +1,558 @@
+/* Interfaces dibujadas con componentes propios.
+   Se diseñan en "cqw": 1em = 1% del ancho de la pantalla, así escalan a cualquier tamaño. */
+.scr {
+  font-size: 1cqw;
+  line-height: 1.25;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: var(--font-body);
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.scr div {
+  font-size: 1cqw;
+}
+
+.scr b,
+.scr i,
+.scr u,
+.scr em,
+.scr strong {
+  font-style: normal;
+  text-decoration: none;
+}
+
+.scr h4,
+.scr p,
+.scr small {
+  margin: 0;
+}
+
+/* ── Estudio jurídico ──────────────────────────────────── */
+.scr-law {
+  background: #fbf7f0;
+  color: #2a1027;
+}
+
+.law-nav {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  height: 9em;
+  padding: 0 4em;
+  background: #2a1027;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.law-nav b {
+  margin-right: auto;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.7em;
+  font-weight: 600;
+}
+
+.law-nav span {
+  font-size: 1.6em;
+  opacity: 0.8;
+}
+
+.law-nav__cta {
+  font-size: 1.6em;
+  font-weight: 700;
+  padding: 0.55em 1.1em;
+  border-radius: 0.3em;
+  background: #d9a84e;
+  color: #2a1027;
+}
+
+.law-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 28em;
+  gap: 4em;
+  align-items: center;
+  padding: 0 4em;
+  min-height: 0;
+}
+
+.law-copy small {
+  display: block;
+  margin-bottom: 0.8em;
+  font-size: 1.7em;
+  font-weight: 600;
+  color: #a56e36;
+  letter-spacing: 0.03em;
+}
+
+.law-copy h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 7.4em;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: #4e2249;
+}
+
+.law-copy p {
+  max-width: 30em;
+  margin-top: 0.9em;
+  font-size: 1.8em;
+  line-height: 1.5;
+  color: #5e5663;
+}
+
+.law-btns {
+  display: flex;
+  gap: 1.4em;
+  margin-top: 2.6em;
+}
+
+.law-btns i,
+.law-btns u {
+  font-size: 1.7em;
+  font-weight: 600;
+  padding: 0.65em 1.2em;
+  border-radius: 0.3em;
+}
+
+.law-btns i {
+  background: #d9a84e;
+  color: #2a1027;
+}
+
+.law-btns u {
+  border: 0.08em solid rgba(78, 34, 73, 0.3);
+  color: #4e2249;
+}
+
+.law-arch {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  border-radius: 50% 50% 0.8em 0.8em / 34% 34% 0.8em 0.8em;
+  background: #4e2249;
+  border: 0.14em solid rgba(217, 168, 78, 0.55);
+}
+
+.law-arch b {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #d9a84e;
+}
+
+.law-areas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 0.1em solid rgba(78, 34, 73, 0.16);
+  flex-shrink: 0;
+}
+
+.law-areas span {
+  padding: 1.5em 2em 1.5em 2.4em;
+  border-left: 0.1em solid rgba(78, 34, 73, 0.16);
+  font-size: 1.7em;
+  font-weight: 600;
+  color: #4e2249;
+}
+
+.law-areas span:first-child {
+  border-left: 0;
+  padding-left: 2.4em;
+}
+
+/* ── Comercio (escritorio y celular) ───────────────────── */
+.scr-retail {
+  background: var(--r-bg);
+  color: var(--r-ink);
+}
+
+.rt-nav {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  height: 8.5em;
+  padding: 0 4em;
+  background: var(--r-nav);
+  color: var(--r-nav-ink);
+  border-bottom: 0.1em solid color-mix(in srgb, var(--r-ink) 12%, transparent);
+  flex-shrink: 0;
+}
+
+.rt-nav b {
+  font-family: var(--font-display);
+  font-size: 2.5em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.rt-search {
+  flex: 1;
+  max-width: 44em;
+  padding: 0.7em 1.2em;
+  border-radius: 99em;
+  background: color-mix(in srgb, var(--r-nav-ink) 12%, transparent);
+  font-size: 1.5em;
+  opacity: 0.85;
+}
+
+.rt-cart {
+  margin-left: auto;
+  padding: 0.6em 1.1em;
+  border-radius: 99em;
+  background: var(--r-acc);
+  color: var(--r-acc-ink);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.rt-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3em;
+  margin: 2.5em 4em 0;
+  padding: 3em 4em;
+  border-radius: 1.2em;
+  background: var(--r-acc);
+  color: var(--r-acc-ink);
+}
+
+.rt-banner h4 {
+  max-width: 13em;
+  font-family: var(--font-display);
+  font-size: 5em;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.rt-banner p {
+  margin-top: 0.6em;
+  font-size: 1.7em;
+}
+
+.rt-pill {
+  padding: 0.7em 1.3em;
+  border-radius: 99em;
+  background: var(--r-ink);
+  color: var(--r-bg);
+  font-size: 1.7em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rt-chips {
+  display: flex;
+  gap: 1em;
+  margin: 2.5em 4em 0;
+}
+
+.rt-chips span {
+  padding: 0.5em 1em;
+  border: 0.07em solid color-mix(in srgb, var(--r-ink) 25%, transparent);
+  border-radius: 99em;
+  font-size: 1.5em;
+}
+
+.rt-chips .is-on {
+  background: var(--r-ink);
+  border-color: var(--r-ink);
+  color: var(--r-bg);
+}
+
+.rt-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+  margin: 2.5em 4em 0;
+}
+
+.rt-card {
+  display: grid;
+  gap: 0.5em;
+}
+
+.rt-thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.8em;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--r-acc) 24%, var(--r-bg));
+}
+
+.rt-thumb em {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.rt-thumb--1 em {
+  width: 38%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--r-ink);
+}
+
+.rt-thumb--2 em {
+  width: 48%;
+  height: 30%;
+  border-radius: 0.6em;
+  background: var(--r-acc);
+}
+
+.rt-thumb--3 em {
+  width: 28%;
+  aspect-ratio: 1;
+  border-radius: 0.5em;
+  background: var(--r-ink);
+  transform: rotate(45deg);
+}
+
+.rt-thumb--4 em {
+  width: 20%;
+  height: 56%;
+  border-radius: 99em;
+  background: var(--r-acc);
+}
+
+.rt-name {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.rt-price {
+  font-size: 1.6em;
+  font-weight: 800;
+}
+
+/* Versión celular: se diseña sobre un ancho de ~38em. */
+.scr.is-mobile,
+.scr.is-mobile div {
+  font-size: 2.6cqw;
+}
+
+.scr.is-mobile {
+  padding-top: 7cqw;
+}
+
+.is-mobile .rt-thumb {
+  aspect-ratio: 4 / 3;
+}
+
+.is-mobile .rt-nav {
+  height: 5.4em;
+  padding: 0 1.4em;
+  gap: 1em;
+}
+
+.is-mobile .rt-nav b {
+  font-size: 1.7em;
+}
+
+.is-mobile .rt-search {
+  display: none;
+}
+
+.is-mobile .rt-cart {
+  font-size: 0.95em;
+  padding: 0.55em 0.9em;
+}
+
+.is-mobile .rt-banner {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2em;
+  margin: 1.2em 1.2em 0;
+  padding: 1.6em;
+  border-radius: 0.9em;
+}
+
+.is-mobile .rt-banner h4 {
+  max-width: none;
+  font-size: 2.1em;
+}
+
+.is-mobile .rt-banner p {
+  font-size: 0.95em;
+}
+
+.is-mobile .rt-pill {
+  font-size: 0.95em;
+}
+
+.is-mobile .rt-chips {
+  gap: 0.5em;
+  margin: 1.2em 1.2em 0;
+  overflow: hidden;
+}
+
+.is-mobile .rt-chips span {
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.is-mobile .rt-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin: 1.2em 1.2em 0;
+}
+
+.is-mobile .rt-name {
+  font-size: 0.9em;
+}
+
+.is-mobile .rt-price {
+  font-size: 1em;
+}
+
+/* ── Negocio de servicios ──────────────────────────────── */
+.scr-service {
+  background: var(--s-bg);
+  color: var(--s-ink);
+}
+
+.sv-nav {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  height: 9em;
+  padding: 0 4em;
+  border-bottom: 0.1em solid color-mix(in srgb, var(--s-ink) 14%, transparent);
+  flex-shrink: 0;
+}
+
+.sv-nav b {
+  margin-right: auto;
+  font-family: var(--font-display);
+  font-size: 2.6em;
+  font-weight: 800;
+}
+
+.sv-nav span {
+  font-size: 1.6em;
+  color: var(--s-muted);
+}
+
+.sv-nav__cta {
+  padding: 0.55em 1.1em;
+  border-radius: 99em;
+  background: var(--s-acc);
+  color: var(--s-acc-ink);
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.sv-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 31em;
+  gap: 6em;
+  align-items: center;
+  padding: 0 4em;
+  min-height: 0;
+}
+
+.sv-copy small {
+  display: block;
+  margin-bottom: 1em;
+  font-family: var(--font-mono);
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--s-acc);
+}
+
+.sv-copy h4 {
+  font-family: var(--font-display);
+  font-size: 7em;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.sv-copy p {
+  max-width: 26em;
+  margin-top: 0.8em;
+  font-size: 1.8em;
+  line-height: 1.45;
+  color: var(--s-muted);
+}
+
+.sv-btn {
+  display: inline-block;
+  margin-top: 1.6em;
+  padding: 0.7em 1.3em;
+  border-radius: 99em;
+  background: var(--s-acc);
+  color: var(--s-acc-ink);
+  font-size: 1.7em;
+  font-weight: 700;
+}
+
+.sv-card {
+  display: grid;
+  gap: 1.1em;
+  padding: 2.4em;
+  border: 0.1em solid color-mix(in srgb, var(--s-ink) 16%, transparent);
+  border-radius: 1.4em;
+  background: color-mix(in srgb, var(--s-ink) 5%, transparent);
+}
+
+.sv-card strong {
+  font-family: var(--font-display);
+  font-size: 2.4em;
+  font-weight: 700;
+}
+
+.sv-field {
+  padding: 0.85em 1em;
+  border-radius: 0.6em;
+  background: color-mix(in srgb, var(--s-ink) 8%, transparent);
+  font-size: 1.5em;
+  color: var(--s-muted);
+}
+
+.sv-btn--full {
+  display: block;
+  margin-top: 0.2em;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.sv-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 0.1em solid color-mix(in srgb, var(--s-ink) 14%, transparent);
+  flex-shrink: 0;
+}
+
+.sv-services div {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+  padding: 2em 2em 2em 4em;
+  border-left: 0.1em solid color-mix(in srgb, var(--s-ink) 14%, transparent);
+}
+
+.sv-services div:first-child {
+  border-left: 0;
+}
+
+.sv-services small {
+  font-family: var(--font-mono);
+  font-size: 1.3em;
+  color: var(--s-acc);
+}
+
+.sv-services span {
+  font-size: 1.7em;
+  font-weight: 600;
+}

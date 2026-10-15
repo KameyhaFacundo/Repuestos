@@ -1,16 +1,34 @@
-import { RouterProvider } from 'react-router-dom'
-import './App.css'
-import { router } from './routes'
-import { AxiosInterceptor } from './interceptors/Axios.interceptor'
-import useTokenExpirationCheck from './hooks/useTokenExpirationCheck'
+import Header from "./sections/Header";
+import Hero from "./sections/Hero";
+import Rubros from "./sections/Rubros";
+import Work from "./sections/Work";
+import Pricing from "./sections/Pricing";
+import Process from "./sections/Process";
+import Differentials from "./sections/Differentials";
+import About from "./sections/About";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 
 function App() {
-  AxiosInterceptor()
-  useTokenExpirationCheck()
-
   return (
-    <RouterProvider router={router} />
-  )
+    <>
+      <a className="skip-link" href="#contenido">
+        Saltar al contenido
+      </a>
+      <Header />
+      <main id="contenido">
+        <Hero />
+        <Rubros />
+        <Work />
+        <Pricing />
+        <Process />
+        <Differentials />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;

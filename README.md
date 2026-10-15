@@ -1,17 +1,42 @@
-# React + Vite
+# Landing de servicio: páginas web para profesionales y negocios
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing en React + Vite, sin backend. Rama `servicio-web`.
 
-Currently, two official plugins are available:
+## Ejecutar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+cp .env.example .env     # y completá VITE_WHATSAPP_NUMBER
+npm run dev              # desarrollo
+npm run build            # genera dist/
+npm run preview          # prueba el build
+```
 
-## React Compiler
+## Qué reemplazar antes de publicar
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Todo está en [src/config/site.js](src/config/site.js):
 
-## Expanding the ESLint configuration
+- `WHATSAPP_NUMBER`, `EMAIL` y `person`: ya cargados con tus datos. `VITE_WHATSAPP_NUMBER` en `.env` es opcional y pisa el número.
+- Planes, precios, proyectos, pasos y diferenciales.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# proyecto-general
+Además, en [index.html](index.html): agregar la etiqueta `canonical` y una imagen `og:image` cuando tengas dominio.
+
+## Estructura
+
+```
+src/
+  config/site.js          contenido y configuración
+  lib/format.js           precios y enlaces de WhatsApp
+  hooks/useReveal.js      animación de entrada (respeta "reducir movimiento")
+  components/ui/          Button, Modal, Reveal, SectionHead, Icons
+  components/mockups/     marcos de navegador/celular y las interfaces de ejemplo
+  sections/               Header, Hero, Rubros, Work, Pricing, Process, Differentials, Contact, Footer
+  styles/                 tokens, base, ui, mockups, screens, sections
+```
+
+## Publicar (Vercel)
+
+1. Importar el repositorio y elegir la rama `servicio-web` como Production Branch.
+2. Framework: Vite (detecta `npm run build` y `dist` solo).
+3. En Settings, Environment Variables: definir `VITE_WHATSAPP_NUMBER`.
+4. Conectar el dominio propio.

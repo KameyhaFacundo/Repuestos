@@ -1,57 +1,70 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo-transparente.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamex | Páginas web para profesionales y negocios desde $119.000 ARS</title>
     <meta
       name="description"
-      content="Justa Causa · María José Fernández, abogada en San Miguel de Tucumán. Familia y sucesiones, derecho laboral, daños y perjuicios, contratos de alquiler, constitución de sociedades y previsional."
+      content="Diseño y desarrollo de páginas web modernas, rápidas y adaptadas a celulares para abogados, contadores, comercios, talleres y negocios locales de Argentina. Planes desde $119.000 ARS."
     />
+    <meta name="theme-color" content="#0e0e0f" />
+    <meta name="color-scheme" content="dark" />
+    <!-- TODO: cuando tengas dominio, agregá <link rel="canonical" href="https://tu-dominio.com/"> -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_AR" />
-    <meta property="og:title" content="Justa Causa · María José Fernández, abogada" />
+    <meta property="og:title" content="Tu negocio merece una web que esté a la altura" />
     <meta
       property="og:description"
-      content="Familia y sucesiones, laboral, daños y perjuicios, alquileres, constitución de sociedades y previsional. San Miguel de Tucumán."
+      content="Páginas web modernas, rápidas y adaptadas a celulares para profesionales y negocios. Planes desde $119.000 ARS."
     />
-    <meta property="og:image" content="/logo.png" />
-    <meta name="theme-color" content="#4E2249" />
+    <meta name="twitter:card" content="summary" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LegalService",
-        "name": "Justa Causa - María José Fernández, Abogada",
-        "telephone": "+543815136691",
-        "email": "abogamosporusted2022@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "24 de Septiembre 650",
-          "addressLocality": "San Miguel de Tucumán",
-          "addressCountry": "AR"
+        "@type": "Service",
+        "serviceType": "Diseño y desarrollo de páginas web",
+        "provider": {
+          "@type": "Organization",
+          "name": "Kamex",
+          "email": "kameyhafacundo@gmail.com",
+          "founder": { "@type": "Person", "name": "Facundo Kameyha" }
         },
-        "sameAs": ["https://www.instagram.com/abogadamariajosefernandez"]
+        "areaServed": { "@type": "Country", "name": "Argentina" },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Profesionales independientes y negocios locales"
+        },
+        "offers": [
+          { "@type": "Offer", "name": "Plan Inicial", "price": "119000", "priceCurrency": "ARS" },
+          { "@type": "Offer", "name": "Plan Profesional", "price": "199000", "priceCurrency": "ARS" },
+          { "@type": "Offer", "name": "Plan Negocio Plus", "price": "299000", "priceCurrency": "ARS" }
+        ]
       }
     </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Figtree:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem("color-mode");
-          var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-          document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
-        } catch (e) {}
-      })();
-    </script>
-    <title>Justa Causa | María José Fernández, Abogada</title>
+    <noscript>
+      <style>
+        .reveal,
+        .hero__in {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>Necesitás activar JavaScript para ver esta página.</noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,0 +1,175 @@
+/* ── Botones ───────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 0.95em 1.5em;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 0.25s var(--ease),
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.btn svg {
+  font-size: 1.15em;
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--sm {
+  padding: 0.7em 1.15em;
+  font-size: 0.9rem;
+}
+
+.btn--lg {
+  padding: 1.1em 1.9em;
+  font-size: 1.08rem;
+}
+
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+}
+
+.btn--primary:hover {
+  background: #d8ff55;
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--c-line);
+  color: inherit;
+}
+
+.btn--ghost:hover {
+  border-color: currentColor;
+}
+
+.btn--dark {
+  background: var(--c-paper-ink);
+  color: var(--c-paper);
+}
+
+.btn--dark:hover {
+  background: #2a2a2a;
+}
+
+.btn:hover svg:last-child:not(:first-child) {
+  transform: translate(3px, -1px);
+}
+
+/* ── Etiquetas ─────────────────────────────────────────── */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.eyebrow span {
+  color: var(--c-accent);
+}
+
+.section--light .eyebrow span {
+  color: var(--c-paper-ink);
+  background: var(--c-accent);
+  padding: 0.15em 0.55em;
+  border-radius: 4px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.3em 0.85em;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge--real {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+  font-weight: 500;
+}
+
+.badge--demo {
+  border: 1px solid var(--c-line);
+  color: var(--c-muted);
+}
+
+/* ── Formulario ────────────────────────────────────────── */
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 1rem;
+  background: var(--c-bg);
+  border: 1.5px solid var(--c-line);
+  border-radius: var(--radius-m);
+  transition: border-color 0.2s;
+  appearance: none;
+}
+
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23a9a69c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.6rem;
+}
+
+.field input::placeholder {
+  color: #7d7a72;
+}
+
+.field input:hover,
+.field select:hover {
+  border-color: rgba(244, 241, 234, 0.35);
+}
+
+.field input:focus-visible,
+.field select:focus-visible {
+  outline: none;
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px var(--c-accent-soft);
+}
+
+.field.has-error input,
+.field.has-error select {
+  border-color: #ff8a73;
+}
+
+.field__error {
+  font-size: 0.85rem;
+  color: #ff9d8a;
+}
