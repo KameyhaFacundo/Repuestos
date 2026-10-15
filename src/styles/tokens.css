@@ -1,5 +1,7 @@
-:root {
-  /* Superficies oscuras (negro del logo) */
+/* Tema oscuro (por defecto) */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
   --c-bg: #07080b;
   --c-bg-2: #0d0f14;
   --c-bg-3: #151821;
@@ -7,13 +9,55 @@
   --c-muted: #9aa3b2;
   --c-line: rgba(241, 244, 249, 0.14);
 
-  /* Acento: azul eléctrico del escudo */
   --c-accent: #2f8cff;
   --c-accent-hover: #5aa5ff;
   --c-accent-ink: #ffffff;
   --c-accent-soft: rgba(47, 140, 255, 0.16);
   --c-focus: #6cb8ff;
   --c-silver: #d9dee6;
+  --c-error: #ff9d8a;
+
+  --header-bg: rgba(7, 8, 11, 0.86);
+  --hero-glow: rgba(47, 140, 255, 0.22);
+  --hero-dots: rgba(255, 255, 255, 0.06);
+  --logo-glow: rgba(47, 140, 255, 0.45);
+  --art-bg: #07080b;
+  --art-glow: rgba(47, 140, 255, 0.28);
+  --map-filter: grayscale(0.4) invert(0.9) hue-rotate(180deg) contrast(0.9);
+  --shadow-soft: 0 24px 60px -28px rgba(0, 0, 0, 0.8);
+}
+
+/* Tema claro */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --c-bg: #f3f5f9;
+  --c-bg-2: #e6ebf3;
+  --c-bg-3: #ffffff;
+  --c-text: #0d1220;
+  --c-muted: #55607a;
+  --c-line: rgba(13, 18, 32, 0.14);
+
+  --c-accent: #1566d6;
+  --c-accent-hover: #0f4fb0;
+  --c-accent-ink: #ffffff;
+  --c-accent-soft: rgba(21, 102, 214, 0.12);
+  --c-focus: #1566d6;
+  --c-silver: #1f2a44;
+  --c-error: #b3341f;
+
+  --header-bg: rgba(243, 245, 249, 0.88);
+  --hero-glow: rgba(47, 140, 255, 0.2);
+  --hero-dots: rgba(13, 18, 32, 0.07);
+  --logo-glow: rgba(21, 102, 214, 0.3);
+  --art-bg: #0b0e14;
+  --art-glow: rgba(47, 140, 255, 0.3);
+  --map-filter: saturate(0.85);
+  --shadow-soft: 0 24px 60px -28px rgba(13, 18, 32, 0.35);
+}
+
+:root {
+
+
 
   --font-display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
   --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -28,7 +72,6 @@
   --header-h: 68px;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --shadow-soft: 0 24px 60px -28px rgba(0, 0, 0, 0.8);
 }
 
 @media (min-width: 720px) {

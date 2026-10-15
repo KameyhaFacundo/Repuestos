@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from "../components/ui/Button";
+import ThemeToggle from "../components/ThemeToggle";
 import { WhatsAppIcon } from "../components/ui/Icons";
 import { brand, navLinks } from "../config/site";
 import { whatsappUrl } from "../lib/format";
@@ -42,6 +43,7 @@ function Header() {
           >
             WhatsApp
           </Button>
+          <ThemeToggle />
           <button
             type="button"
             className={`burger ${open ? "is-open" : ""}`}

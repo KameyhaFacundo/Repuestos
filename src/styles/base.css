@@ -5,7 +5,6 @@
 }
 
 html {
-  color-scheme: dark;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-h) + 8px);
 }

@@ -149,12 +149,12 @@
 }
 
 .field input::placeholder {
-  color: #7d7a72;
+  color: var(--c-muted);
 }
 
 .field input:hover,
 .field select:hover {
-  border-color: rgba(244, 241, 234, 0.35);
+  border-color: color-mix(in srgb, var(--c-text) 40%, transparent);
 }
 
 .field input:focus-visible,
@@ -166,10 +166,10 @@
 
 .field.has-error input,
 .field.has-error select {
-  border-color: #ff8a73;
+  border-color: var(--c-error);
 }
 
 .field__error {
   font-size: 0.85rem;
-  color: #ff9d8a;
+  color: var(--c-error);
 }

@@ -45,7 +45,7 @@ h3 {
   top: 0;
   z-index: 50;
   height: var(--header-h);
-  background: rgba(7, 8, 11, 0.86);
+  background: var(--header-bg);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--c-line);
 }
@@ -69,6 +69,11 @@ h3 {
   height: 52px;
   width: auto;
   mix-blend-mode: lighten;
+}
+
+:root[data-theme="light"] .brand img {
+  mix-blend-mode: normal;
+  border-radius: 8px;
 }
 
 .brand__name {
@@ -172,8 +177,8 @@ h3 {
   position: relative;
   padding-block: clamp(40px, 7vw, 96px);
   background:
-    radial-gradient(60% 70% at 78% 40%, rgba(47, 140, 255, 0.22), transparent 70%),
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0) 0 0 / 18px 18px,
+    radial-gradient(60% 70% at 78% 40%, var(--hero-glow), transparent 70%),
+    radial-gradient(circle at 1px 1px, var(--hero-dots) 1px, transparent 0) 0 0 / 18px 18px,
     var(--c-bg);
 }
 
@@ -239,7 +244,7 @@ h3 {
   margin-inline: auto;
   height: auto;
   border-radius: var(--radius-l);
-  box-shadow: 0 0 80px -10px rgba(47, 140, 255, 0.45);
+  box-shadow: 0 0 80px -10px var(--logo-glow);
 }
 
 @media (min-width: 900px) {
@@ -360,8 +365,8 @@ h3 {
   padding: 14px;
   aspect-ratio: 1;
   background:
-    radial-gradient(70% 70% at 50% 45%, rgba(47, 140, 255, 0.28), transparent 75%),
-    var(--c-bg);
+    radial-gradient(70% 70% at 50% 45%, var(--art-glow), transparent 75%),
+    var(--art-bg);
 }
 
 .card__art svg {
@@ -497,7 +502,7 @@ h3 {
   height: 100%;
   min-height: 320px;
   border: 0;
-  filter: grayscale(0.4) invert(0.9) hue-rotate(180deg) contrast(0.9);
+  filter: var(--map-filter);
 }
 
 @media (min-width: 900px) {
@@ -541,10 +546,34 @@ h3 {
   color: #fff;
   background: #25d366;
   border-radius: 50%;
-  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.5);
   transition: transform 0.25s var(--ease);
 }
 
 .wa-float:hover {
   transform: scale(1.08);
+}
+
+/* ── Selector de tema ──────────────────────────────────── */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  font-size: 1.3rem;
+  background: transparent;
+  border: 1.5px solid var(--c-line);
+  border-radius: 50%;
+  color: var(--c-text);
+  transition:
+    border-color 0.2s,
+    transform 0.25s var(--ease);
+}
+
+.theme-toggle:hover {
+  border-color: currentColor;
+}
+
+.theme-toggle:active {
+  transform: scale(0.94);
 }
