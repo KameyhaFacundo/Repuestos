@@ -1,70 +1,47 @@
 import Button from "../components/ui/Button";
 import { ArrowIcon, WhatsAppIcon } from "../components/ui/Icons";
-import { BrowserFrame, PhoneFrame } from "../components/mockups/Frames";
-import LawScreen from "../components/mockups/screens/LawScreen";
-import RetailScreen from "../components/mockups/screens/RetailScreen";
-import ServiceScreen from "../components/mockups/screens/ServiceScreen";
-import { climaData, shopData } from "../components/mockups/screenData";
-import { plans } from "../config/site";
-import { formatPrice, whatsappUrl } from "../lib/format";
+import { brand, location } from "../config/site";
+import { whatsappUrl } from "../lib/format";
 
-const startPrice = formatPrice(plans[0].price);
+const facts = ["Asesoramiento real", "Consultá por WhatsApp", "Motos y ferretería"];
 
 function Hero() {
   return (
     <section id="inicio" className="hero" aria-labelledby="hero-title">
-      <div className="wrap hero__grid">
+      <div className="wrap hero__in">
         <div className="hero__copy">
-          <p className="tag hero__in" style={{ "--i": 0 }}>
-            <span className="tag__dot" aria-hidden="true" />
-            Desarrollo web para profesionales y negocios
+          <p className="eyebrow">
+            <span>{location.city}</span>
           </p>
-
-          <h1 id="hero-title" className="hero__in" style={{ "--i": 1 }}>
-            Tu negocio merece una web que esté <em>a la altura.</em>
+          <h1 id="hero-title">
+            Repuestos para tu moto. <em>Ferretería</em> para todo lo demás.
           </h1>
-
-          <p className="hero__lead hero__in" style={{ "--i": 2 }}>
-            Diseño y desarrollo páginas web modernas, rápidas y adaptadas a celulares para
-            profesionales y negocios que quieren crecer sin gastar de más.
+          <p className="hero__lead">
+            En {brand.name} sabemos qué pieza va en tu modelo. Decinos marca, modelo y qué necesitás, y te
+            respondemos con disponibilidad por WhatsApp.
           </p>
-
-          <div className="hero__actions hero__in" style={{ "--i": 3 }}>
+          <div className="hero__cta">
             <Button
-              href={whatsappUrl("Hola, quiero mi página web. ¿Me pasás más información?")}
+              href={whatsappUrl("Hola Impulsa Motors, quisiera hacer una consulta.")}
               external
+              size="lg"
               icon={<WhatsAppIcon />}
             >
-              Quiero mi página web
+              Consultar por WhatsApp
             </Button>
-            <Button href="#trabajos" variant="ghost" iconAfter={<ArrowIcon />}>
-              Ver trabajos
+            <Button href="#buscador" variant="ghost" size="lg" iconAfter={<ArrowIcon />}>
+              Buscar mi repuesto
             </Button>
           </div>
-
-          <div className="price-chip hero__in" style={{ "--i": 4 }}>
-            <span className="price-chip__label">Desde</span>
-            <strong>{startPrice}</strong>
-            <span className="price-chip__cur">ARS</span>
-            <p>Precio promocional de lanzamiento, sujeto al alcance del proyecto.</p>
-          </div>
+          <ul className="hero__facts">
+            {facts.map((fact) => (
+              <li key={fact}>{fact}</li>
+            ))}
+          </ul>
         </div>
 
-        <div
-          className="stage hero__in"
-          style={{ "--i": 2 }}
-          role="img"
-          aria-label="Ejemplos de páginas web: un estudio jurídico, un comercio en el celular y un negocio de servicios"
-        >
-          <BrowserFrame url="estudiojuridico.com.ar" className="stage__main">
-            <LawScreen />
-          </BrowserFrame>
-          <BrowserFrame url="climasur.com.ar" className="stage__service">
-            <ServiceScreen data={climaData} />
-          </BrowserFrame>
-          <PhoneFrame className="stage__phone">
-            <RetailScreen data={shopData} mobile />
-          </PhoneFrame>
+        <div className="hero__logo">
+          <img src={brand.logo} alt={`${brand.name}, ${brand.tagline}`} width="459" height="312" />
         </div>
       </div>
     </section>

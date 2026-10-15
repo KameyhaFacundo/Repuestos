@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Button from "../components/ui/Button";
+import { WhatsAppIcon } from "../components/ui/Icons";
 import { brand, navLinks } from "../config/site";
+import { whatsappUrl } from "../lib/format";
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -18,7 +20,7 @@ function Header() {
     <header className="site-header">
       <div className="wrap site-header__in">
         <a className="brand" href="#inicio" onClick={close} aria-label={`${brand.name}, ir al inicio`}>
-          <span className="brand__mark" aria-hidden="true" />
+          <img src={brand.logo} alt="" width="92" height="62" />
           <span className="brand__name">{brand.name}</span>
         </a>
 
@@ -31,8 +33,14 @@ function Header() {
         </nav>
 
         <div className="site-header__actions">
-          <Button href="#contacto" size="sm" className="site-header__cta">
-            Quiero mi web
+          <Button
+            href={whatsappUrl("Hola Impulsa Motors, quisiera hacer una consulta.")}
+            external
+            size="sm"
+            icon={<WhatsAppIcon />}
+            className="site-header__cta"
+          >
+            WhatsApp
           </Button>
           <button
             type="button"

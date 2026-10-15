@@ -1,12 +1,9 @@
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
-import Rubros from "./sections/Rubros";
-import Work from "./sections/Work";
-import Pricing from "./sections/Pricing";
-import Process from "./sections/Process";
-import Differentials from "./sections/Differentials";
-import About from "./sections/About";
-import Contact from "./sections/Contact";
+import Finder from "./sections/Finder";
+import Products from "./sections/Products";
+import Reasons from "./sections/Reasons";
+import Location from "./sections/Location";
 import Footer from "./sections/Footer";
 
 function App() {
@@ -18,13 +15,10 @@ function App() {
       <Header />
       <main id="contenido">
         <Hero />
-        <Rubros />
-        <Work />
-        <Pricing />
-        <Process />
-        <Differentials />
-        <About />
-        <Contact />
+        <Finder />
+        <Products />
+        <Reasons />
+        <Location />
       </main>
       <Footer />
     </>

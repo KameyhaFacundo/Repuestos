@@ -1,39 +1,34 @@
 :root {
-  /* Superficies oscuras */
-  --c-bg: #0e0e0f;
-  --c-bg-2: #151516;
-  --c-bg-3: #1d1d1f;
-  --c-text: #f4f1ea;
-  --c-muted: #a9a69c;
-  --c-line: rgba(244, 241, 234, 0.14);
+  /* Superficies oscuras (negro del logo) */
+  --c-bg: #07080b;
+  --c-bg-2: #0d0f14;
+  --c-bg-3: #151821;
+  --c-text: #f1f4f9;
+  --c-muted: #9aa3b2;
+  --c-line: rgba(241, 244, 249, 0.14);
 
-  /* Superficies claras */
-  --c-paper: #f4f1ea;
-  --c-paper-2: #ffffff;
-  --c-paper-ink: #141414;
-  --c-paper-muted: #5a574e;
-  --c-paper-line: rgba(20, 20, 20, 0.14);
+  /* Acento: azul eléctrico del escudo */
+  --c-accent: #2f8cff;
+  --c-accent-hover: #5aa5ff;
+  --c-accent-ink: #ffffff;
+  --c-accent-soft: rgba(47, 140, 255, 0.16);
+  --c-focus: #6cb8ff;
+  --c-silver: #d9dee6;
 
-  /* Acento: verde lima eléctrico */
-  --c-accent: #c8f23d;
-  --c-accent-ink: #0e0e0f;
-  --c-accent-soft: rgba(200, 242, 61, 0.12);
-  --c-focus: #c8f23d;
-
-  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
 
   --radius-s: 8px;
   --radius-m: 14px;
   --radius-l: 22px;
 
   --gutter: 20px;
-  --maxw: 1240px;
+  --maxw: 1200px;
   --header-h: 68px;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --shadow-soft: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+  --shadow-soft: 0 24px 60px -28px rgba(0, 0, 0, 0.8);
 }
 
 @media (min-width: 720px) {
