@@ -2,6 +2,8 @@ import { WhatsAppIcon } from "../components/ui/Icons";
 import { brand, location } from "../config/site";
 import { whatsappUrl } from "../lib/format";
 
+const KAMEX_URL = "https://kamexsolutions.vercel.app/";
+
 function Footer() {
   return (
     <>
@@ -10,7 +12,12 @@ function Footer() {
           <p>
             © {new Date().getFullYear()} {brand.name} · {location.city}
           </p>
-          <p className="site-footer__credit">Sitio desarrollado por Kamex</p>
+          <p className="site-footer__credit">
+              Sitio desarrollado por{" "}
+              <a href={KAMEX_URL} target="_blank" rel="noopener noreferrer">
+                Kamex
+              </a>
+            </p>
         </div>
       </footer>
       <a
