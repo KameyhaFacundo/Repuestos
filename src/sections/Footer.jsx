@@ -2,7 +2,7 @@ import { WhatsAppIcon } from "../components/ui/Icons";
 import { brand, location } from "../config/site";
 import { whatsappUrl } from "../lib/format";
 
-const KAMEX_URL = "https://kamexsolutions.vercel.app/";
+const KAMEX_URL = "https://www.kamexsolutions.com.ar/";
 
 function Footer() {
   return (
